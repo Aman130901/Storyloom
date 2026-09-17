@@ -28,6 +28,9 @@
 ### 🃏 Curated Book Collections
 ![Curated Book Collections](assets/collections_preview.png)
 
+### 📚 Interactive Fanned Book Showcase
+![Interactive Fanned Book Showcase](assets/fanned_spread_preview.png)
+
 ### 🔒 Interactive Accordion Scroll Pinning
 ![Accordion Scroll Pinning](assets/accordion_preview.png)
 
