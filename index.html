@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storyloom — The Interactive Literary &amp; Famous Books Archive</title>
+  <meta name="description"
+    content="Storyloom is an interactive literary archive weaving famous books like Harry Potter, Twilight, Lord of the Rings, Dune, and iconic masterpieces.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Reenie+Beanie&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Lenis Smooth Scroll CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css?v=19">
+</head>
+
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="logo-wrapper">
+      <a href="#" class="logo"><span>storyloom</span></a>
+    </div>
+
+    <nav class="site-nav">
+      <ul class="nav-links">
+        <li><a href="#who" class="nav-link">About Archive</a></li>
+        <li><a href="#work" class="nav-link">Famous Books</a></li>
+        <li><a href="#collaborators" class="nav-link">Publishers</a></li>
+        <li><a href="#cta" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="btn-start-project">Request a Book</button>
+    </nav>
+  </header>
+
+  <!-- Section 1: Hero Stage (Dark Theme) -->
+  <section class="hero-stage">
+
+    <!-- Background Dynamic SVG Loop with Animated Text Flowing Inside from Left to Right -->
+    <svg class="hero-svg-loop" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <path id="orangeLoopCurve" d="M -400 450 C 250 80, 380 820, 750 400 C 1120 -20, 1220 680, 1850 350" />
+      </defs>
+
+      <!-- The Thick Vibrant Orange Ribbon -->
+      <use href="#orangeLoopCurve" class="fluid-path" />
+
+      <!-- Text Flowing INSIDE the Orange Ribbon from Left to Right (Seamless Infinite Repeating Unit) -->
+      <text class="loop-text-inside">
+        <textPath id="orangeTextPath" href="#orangeLoopCurve" startOffset="-25%">
+          ★ STORYLOOM &bull; HARRY POTTER &bull; TWILIGHT &bull; THE LORD OF THE RINGS &bull; DUNE &bull; THE GREAT
+          GATSBY &bull; 1984 &bull; TO KILL A MOCKINGBIRD &bull; PRIDE &amp; PREJUDICE &bull; THE HOBBIT &bull; WEAVING
+          TIMELESS STORIES &bull; ★ STORYLOOM &bull; HARRY POTTER &bull; TWILIGHT &bull; THE LORD OF THE RINGS &bull;
+          DUNE &bull; THE GREAT GATSBY &bull; 1984 &bull; TO KILL A MOCKINGBIRD &bull; PRIDE &amp; PREJUDICE &bull; THE
+          HOBBIT &bull; WEAVING TIMELESS STORIES &bull; ★ STORYLOOM &bull; HARRY POTTER &bull; TWILIGHT &bull; THE LORD
+          OF THE RINGS &bull; DUNE &bull; THE GREAT GATSBY &bull; 1984 &bull; TO KILL A MOCKINGBIRD &bull; PRIDE &amp;
+          PREJUDICE &bull; THE HOBBIT &bull; WEAVING TIMELESS STORIES &bull; ★ STORYLOOM &bull; HARRY POTTER &bull;
+          TWILIGHT &bull; THE LORD OF THE RINGS &bull; DUNE &bull; THE GREAT GATSBY &bull; 1984 &bull; TO KILL A
+          MOCKINGBIRD &bull; PRIDE &amp; PREJUDICE &bull; THE HOBBIT &bull; WEAVING TIMELESS STORIES &bull; ★ STORYLOOM
+          &bull; HARRY POTTER &bull; TWILIGHT &bull; THE LORD OF THE RINGS &bull; DUNE &bull; THE GREAT GATSBY &bull;
+          1984 &bull; TO KILL A MOCKINGBIRD &bull; PRIDE &amp; PREJUDICE &bull; THE HOBBIT &bull; WEAVING TIMELESS
+          STORIES &bull;
+        </textPath>
+      </text>
+    </svg>
+
+    <!-- Typography Overlays -->
+    <div class="hero-text-left">
+      <h2 class="text-studio">literary</h2>
+    </div>
+
+    <div class="hero-text-right">
+      <h2 class="text-culture"><span>and</span>stories.</h2>
+    </div>
+
+    <!-- 3D Interactive Floating Collage (Real Famous Book Cover Loop Train) -->
+    <div class="collage-container">
+
+      <!-- 1. Harry Potter Real Book Cover -->
+      <div class="floating-item item-chair" data-speed="25">
+        <img src="assets/hp_cover.jpg?v=3" alt="Harry Potter & Sorcerer's Stone Real Book Cover">
+      </div>
+
+      <!-- 2. Twilight Real Book Cover -->
+      <div class="floating-item item-table" data-speed="-15">
+        <img src="assets/twilight_cover.jpg?v=3" alt="Twilight Real Book Cover - Stephenie Meyer">
+      </div>
+
+      <!-- 3. Lord of the Rings Real Book Cover -->
+      <div class="floating-item item-tshirt" data-speed="35">
+        <img src="assets/lotr_cover.jpg?v=4" alt="The Lord of the Rings Real Book Cover">
+      </div>
+
+      <!-- 4. Dune Real Book Cover -->
+      <div class="floating-item item-notebook" data-speed="-25">
+        <img src="assets/dune_cover.jpg?v=4" alt="Dune Chronicles Real Book Cover">
+      </div>
+
+      <!-- 5. The Great Gatsby Real Book Cover -->
+      <div class="floating-item item-book" data-speed="30">
+        <img src="assets/gatsby_cover.jpg?v=6" alt="The Great Gatsby Real Book Cover">
+      </div>
+
+      <!-- 6. 1984 Orwell Real Book Cover -->
+      <div class="floating-item item-yellow-card" data-speed="15">
+        <img src="assets/orwell1984_cover.jpg?v=6" alt="1984 George Orwell Real Book Cover">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Services & Capabilities Band (Famous Genres Ping-Pong Animation) -->
+  <section class="section-services">
+    <div class="services-top-bar">
+      <h2 class="services-title">Curated Book Collections</h2>
+      <div class="services-tag">[ WORLDWIDE LITERARY ARCHIVE ] — 2026</div>
+    </div>
+
+    <div class="services-marquee-wrapper">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-num">(01)</div>
+          <div class="service-img-wrapper">
+            <img src="assets/hp_cover.jpg?v=6" alt="Hogwarts Magical Fantasy">
+          </div>
+          <div class="service-name">Magical Fantasy &amp;<br>Hogwarts Sagas</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">(02)</div>
+          <div class="service-img-wrapper">
+            <img src="assets/twilight_cover.jpg?v=6" alt="Twilight Vampire Romance">
+          </div>
+          <div class="service-name">Vampire Romance &amp;<br>Twilight Sagas</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">(03)</div>
+          <div class="service-img-wrapper">
+            <img src="assets/lotr_cover.jpg?v=6" alt="Epic High Fantasy Tolkien">
+          </div>
+          <div class="service-name">Epic High Fantasy &amp;<br>Tolkien Lore</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">(04)</div>
+          <div class="service-img-wrapper">
+            <img src="assets/dune_cover.jpg?v=6" alt="Sci-Fi Dune Universe">
+          </div>
+          <div class="service-name">Sci-Fi Classics &amp;<br>Dune Universe</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">(05)</div>
+          <div class="service-img-wrapper">
+            <img src="assets/gatsby_cover.jpg?v=6" alt="The Great Gatsby F. Scott Fitzgerald">
+          </div>
+          <div class="service-name">Modern Classics &amp;<br>Jazz Age Sagas</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">(06)</div>
+          <div class="service-img-wrapper">
+            <img src="assets/orwell1984_cover.jpg?v=8" alt="Dystopian Fiction Orwell">
+          </div>
+          <div class="service-name">Dystopian Fiction &amp;<br>Orwellian Lore</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">(07)</div>
+          <div class="service-img-wrapper">
+            <img src="assets/mockingbird_cover.jpg?v=8" alt="Pulitzer Winner Harper Lee To Kill a Mockingbird">
+          </div>
+          <div class="service-name">Pulitzer Winners &amp;<br>American Classics</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">(08)</div>
+          <div class="service-img-wrapper">
+            <img src="assets/pride_cover.jpg?v=9" alt="Regency Romance Jane Austen Pride and Prejudice">
+          </div>
+          <div class="service-name">Regency Romance &amp;<br>Jane Austen Sagas</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">(09)</div>
+          <div class="service-img-wrapper">
+            <img src="assets/hobbit_cover.jpg?v=9" alt="Middle-earth Quests Tolkien The Hobbit">
+          </div>
+          <div class="service-name">Middle-earth Quests &amp;<br>Tolkien Lore</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: "Who We Are" (Cream Canvas + Interactive Floating Orbs) -->
+  <section class="section-who" id="who">
+    <!-- Interactive Floating Orange Orbs Canvas -->
+    <div class="orbs-container"></div>
+
+    <div class="who-tag">[ Literary Universe ]</div>
+
+    <div class="who-statement">
+      <h2 class="statement-main">
+        A curated archive of world-famous books, epic sagas, and timeless <em>literary universes</em>.
+      </h2>
+      <p class="statement-secondary">
+        From the magic of Hogwarts to the misty forests of Forks and the desert dunes of Arrakis, we celebrate stories
+        that shape <em>generations</em>.
+      </p>
+
+      <a href="#work" class="link-meet">
+        Explore famous books &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 3: Pinned Scroll-Lock Work Accordion Showcase (Famous Books Roster) -->
+  <section class="section-accordion" id="work">
+    <div class="accordion-sticky-wrapper">
+      <div class="accordion-stage-container">
+
+        <!-- Active Preview Image Positioning Track -->
+        <div class="active-image-track" id="activeImageTrack">
+          <div class="accordion-preview-card">
+            <img src="assets/hp_cover.jpg?v=3" alt="Featured Real Book Cover" class="accordion-preview-img"
+              id="workFeaturedImg">
+            <div class="preview-client-label" id="workFeaturedLabel">Harry Potter (J.K. Rowling)</div>
+          </div>
+        </div>
+
+        <!-- Horizontal Book Roster Row at Bottom -->
+        <div class="accordion-client-list-horizontal" id="clientRosterRow">
+          <div class="client-item active" data-client="Harry Potter">Harry Potter</div>
+          <div class="client-item" data-client="Twilight">Twilight</div>
+          <div class="client-item" data-client="Lord of the Rings">Lord of the Rings</div>
+          <div class="client-item" data-client="Dune">Dune</div>
+          <div class="client-item" data-client="The Great Gatsby">The Great Gatsby</div>
+          <div class="client-item" data-client="1984">1984</div>
+          <div class="client-item" data-client="To Kill a Mockingbird">To Kill a Mockingbird</div>
+          <div class="client-item" data-client="Pride & Prejudice">Pride &amp; Prejudice</div>
+          <div class="client-item" data-client="The Hobbit">The Hobbit</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Iconic Publishers & Literary Imprints (Infinite LTR Marquee) -->
+  <section class="section-brands" id="collaborators">
+    <div class="brands-marquee-wrapper">
+      <div class="brands-track">
+        <div class="brand-logo">Bloomsbury</div>
+        <div class="brand-logo">Scholastic</div>
+        <div class="brand-logo">Penguin Random House</div>
+        <div class="brand-logo">HarperCollins</div>
+        <div class="brand-logo">Simon &amp; Schuster</div>
+        <div class="brand-logo">Macmillan</div>
+        <div class="brand-logo">Vintage Books</div>
+        <div class="brand-logo">Little, Brown &amp; Co</div>
+        <div class="brand-logo">Viking Press</div>
+        <!-- Duplicated set for 100% gapless infinite left-to-right loop -->
+        <div class="brand-logo">Bloomsbury</div>
+        <div class="brand-logo">Scholastic</div>
+        <div class="brand-logo">Penguin Random House</div>
+        <div class="brand-logo">HarperCollins</div>
+        <div class="brand-logo">Simon &amp; Schuster</div>
+        <div class="brand-logo">Macmillan</div>
+        <div class="brand-logo">Vintage Books</div>
+        <div class="brand-logo">Little, Brown &amp; Co</div>
+        <div class="brand-logo">Viking Press</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Big Call To Action (CTA) with 3D Animated Flipping Book -->
+  <section class="section-cta" id="cta">
+
+    <!-- 3D Background Animated Flipping Book Engine -->
+    <div class="background-book-animation">
+      <div class="animated-3d-book">
+        <div class="book-cover-back"></div>
+        <div class="book-spine-center"></div>
+        <div class="book-cover-front"></div>
+
+        <!-- Left Base Page -->
+        <div class="base-page page-left">
+          <div class="page-content-text">
+            <span>CHAPTER I</span>
+            <p>The story began in the quiet corners of Hogwarts, across the misty valleys of Middle-earth, and far into the desert sands of Arrakis...</p>
+          </div>
+        </div>
+
+        <!-- Right Base Page -->
+        <div class="base-page page-right">
+          <div class="page-content-text">
+            <span>CHAPTER II</span>
+            <p>Every page turned reveals a new world, timeless characters, and legends woven into the tapestry of human imagination...</p>
+          </div>
+        </div>
+
+        <!-- Dynamic Flipping Pages Loop -->
+        <div class="flip-page flip-1">
+          <div class="page-face page-face-front">
+            <span class="chapter-num">CHAPTER IV</span>
+            <p>“All we have to decide is what to do with the time that is given us.” — J.R.R. Tolkien</p>
+          </div>
+          <div class="page-face page-face-back">
+            <span class="chapter-num">CHAPTER V</span>
+            <p>“I am no bird; and no net ensnares me: I am a free human being...” — Jane Austen</p>
+          </div>
+        </div>
+
+        <div class="flip-page flip-2">
+          <div class="page-face page-face-front">
+            <span class="chapter-num">CHAPTER VI</span>
+            <p>“Fear is the mind-killer. Fear is the little-death that brings obliteration.” — Frank Herbert</p>
+          </div>
+          <div class="page-face page-face-back">
+            <span class="chapter-num">CHAPTER VII</span>
+            <p>“It is our choices that show what we truly are, far more than our abilities.” — J.K. Rowling</p>
+          </div>
+        </div>
+
+        <div class="flip-page flip-3">
+          <div class="page-face page-face-front">
+            <span class="chapter-num">CHAPTER VIII</span>
+            <p>“So we beat on, boats against the current, borne back ceaselessly into the past.” — F. Scott Fitzgerald</p>
+          </div>
+          <div class="page-face page-face-back">
+            <span class="chapter-num">CHAPTER IX</span>
+            <p>“Until I feared I would lose it, I never loved to read. One does not love breathing.” — Harper Lee</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <!-- Doodle Stickers -->
+      <div class="doodle-sticker doodle-notebook"></div>
+      <div class="doodle-sticker doodle-eye"></div>
+
+      <h2 class="cta-headline">
+        Let's <span class="make">read</span><br>
+        <span class="something">something</span><br>
+        <span class="worth">worth</span><br>
+        <span class="knotting">discovering</span>
+      </h2>
+
+      <p class="cta-subtext">
+        Your next legendary reading journey starts <em>here</em>
+      </p>
+
+      <button class="btn-start-project" style="margin-top: 3rem; padding: 1rem 2.5rem; font-size: 1.1rem;">
+        Request a Book
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 6: Footer Sub-Section (Contact, Divider & Fanned Cards) -->
+  <section class="section-footer-sub">
+
+    <!-- Contact & Newsletter Bar -->
+    <div class="contact-bar">
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2;"
+            viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        </div>
+        <a href="mailto:library@storyloom.com" class="contact-link">library@storyloom.com</a>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2;"
+            viewBox="0 0 24 24">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+        </div>
+        <a href="tel:+15550192833" class="contact-link">+1 (555) 019-2833</a>
+      </div>
+
+      <div class="newsletter-box">
+        <p class="newsletter-text">Get first access to new releases, collector editions, and reading guides.</p>
+        <button class="btn-join-knot">JOIN THE CLUB</button>
+      </div>
+    </div>
+
+    <!-- Location Divider Line System -->
+    <div class="location-divider-bar">
+      <div class="location-left">
+        STORYLOOM<br>
+        WEAVING STORIES. SAGAS. LEGENDS
+      </div>
+
+      <div class="location-center">
+        <div class="location-line"></div>
+        <div class="location-tag">[ WORLDWIDE LITERARY ARCHIVE ]</div>
+        <div class="location-line"></div>
+      </div>
+
+      <div class="location-year">2026</div>
+    </div>
+
+    <!-- Fanned Cards Carousel Stage (Real Book Covers Spread) -->
+    <div class="fanned-cards-stage">
+      <div class="fanned-card card-wood-left">
+        <img src="assets/lotr_cover.jpg?v=4" alt="The Lord of the Rings Real Book Cover">
+      </div>
+
+      <div class="fanned-card card-yellow">
+        <img src="assets/dune_cover.jpg?v=4" alt="Dune Chronicles Real Book Cover">
+      </div>
+
+      <div class="fanned-card card-portrait-center">
+        <img src="assets/hp_cover.jpg?v=4" alt="Harry Potter Real Book Cover">
+        <div class="portrait-overlay-text">storyloom</div>
+        <div class="portrait-dots" style="top: 30%; left: 20%;"></div>
+        <div class="portrait-dots" style="top: 70%; left: 80%;"></div>
+      </div>
+
+      <div class="fanned-card card-cream-spiral">
+        <img src="assets/twilight_cover.jpg?v=4" alt="Twilight Real Book Cover">
+      </div>
+
+      <div class="fanned-card card-wood-right">
+        <img src="assets/gatsby_cover.jpg?v=6" alt="The Great Gatsby Real Book Cover">
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div>&copy; 2026 Storyloom. All Rights Reserved.</div>
+    <div id="studioClock">EST: --:--:--</div>
+    <div style="display: flex; gap: 1.5rem;">
+      <a href="#" style="color: var(--text-muted-light); text-decoration: underline;">Privacy Policy</a>
+      <a href="#" style="color: var(--text-muted-light); text-decoration: underline;">Terms &amp; Reading Guides</a>
+    </div>
+  </footer>
+
+  <!-- Request a Book / Inquiry Centered Modal Dialog -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-drawer">
+      <button class="modal-close">&times;</button>
+      <h2 style="font-size: 1.6rem; margin-bottom: 0.25rem; margin-top: 0.2rem;">Request a Book</h2>
+      <p style="color: var(--text-muted-light); margin-bottom: 1.2rem; font-size: 0.85rem;">Order a special edition or
+        inquire about famous book collections.</p>
+
+      <form id="projectForm" class="modal-form-grid">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" placeholder="e.g. Hermione Granger" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="hermione@hogwarts.edu" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Select Book Franchise</label>
+          <select class="form-select" required>
+            <option value="">Select a Franchise</option>
+            <option value="hp">Harry Potter Series (J.K. Rowling)</option>
+            <option value="twilight">Twilight Saga (Stephenie Meyer)</option>
+            <option value="lotr">The Lord of the Rings (J.R.R. Tolkien)</option>
+            <option value="dune">Dune Chronicles (Frank Herbert)</option>
+            <option value="gatsby">The Great Gatsby (F. Scott Fitzgerald)</option>
+            <option value="1984">1984 (George Orwell)</option>
+            <option value="mockingbird">To Kill a Mockingbird (Harper Lee)</option>
+            <option value="pride">Pride &amp; Prejudice (Jane Austen)</option>
+            <option value="hobbit">The Hobbit (J.R.R. Tolkien)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Preferred Edition</label>
+          <select class="form-select">
+            <option value="hardcover">Collector's Hardcover Box Set</option>
+            <option value="paperback">Illustrated Deluxe Paperback</option>
+            <option value="signed">First Edition / Signed Copy</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label class="form-label">Special Requests / Notes</label>
+          <input type="text" class="form-input" placeholder="Custom gift wrapping, delivery notes...">
+        </div>
+
+        <button type="submit" class="btn-submit full-width">Submit Book Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lenis Smooth Scroll Script -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Master Application Script -->
+  <script src="js/app.js?v=15"></script>
+</body>
+
+</html>
