@@ -487,7 +487,7 @@ function initWorkAccordion() {
   const clientList = Array.from(clientItems).map(item => item.getAttribute('data-client'));
   let currentIndex = -1;
 
-  function alignCardAboveItem(index) {
+  function alignCardAboveItem(index, isDirectClick = false) {
     const item = clientItems[index];
     if (!item || !stageContainer || !imageTrack) return;
 
@@ -517,18 +517,21 @@ function initWorkAccordion() {
       const itemLeft = item.offsetLeft;
       const itemWidth = item.offsetWidth;
       const rowWidth = rosterRow.offsetWidth;
-      rosterRow.scrollTo({
-        left: itemLeft - (rowWidth / 2) + (itemWidth / 2),
-        behavior: 'smooth'
-      });
+      const targetScroll = itemLeft - (rowWidth / 2) + (itemWidth / 2);
+
+      if (isDirectClick) {
+        rosterRow.scrollTo({ left: targetScroll, behavior: 'smooth' });
+      } else {
+        rosterRow.scrollLeft = targetScroll;
+      }
     }
   }
 
-  function setActiveIndex(index) {
+  function setActiveIndex(index, isDirectClick = false) {
     if (index < 0 || index >= clientList.length) return;
 
     if (index === currentIndex) {
-      alignCardAboveItem(index);
+      alignCardAboveItem(index, isDirectClick);
       return;
     }
     currentIndex = index;
@@ -551,7 +554,7 @@ function initWorkAccordion() {
       previewImg.style.transform = 'scale(1)';
     }
 
-    alignCardAboveItem(index);
+    alignCardAboveItem(index, isDirectClick);
   }
 
   const stickyWrapper = document.querySelector('.accordion-sticky-wrapper');
@@ -611,7 +614,7 @@ function initWorkAccordion() {
 
     item.addEventListener('click', (e) => {
       e.preventDefault();
-      setActiveIndex(idx);
+      setActiveIndex(idx, true);
 
       // Calculate scroll offset for clicked book and scroll smoothly
       const rect = section.getBoundingClientRect();
