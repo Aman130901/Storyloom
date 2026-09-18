@@ -56,6 +56,7 @@ const clientProjects = {
 
 document.addEventListener('DOMContentLoaded', () => {
   initLenisSmoothScroll();
+  initMobileMenu();
   initHeaderThemeToggle();
   initHeroParallax();
   initOrangeTextFlow();
@@ -65,6 +66,60 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletterBtn();
   initLiveClock();
 });
+
+/**
+ * Mobile Navigation Drawer Toggle Handler
+ */
+function initMobileMenu() {
+  const toggleBtn = document.getElementById('mobileMenuToggle');
+  const nav = document.getElementById('siteNav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (!toggleBtn || !nav) return;
+
+  function openMenu() {
+    nav.classList.add('mobile-active');
+    toggleBtn.classList.add('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
+  }
+
+  function closeMenu() {
+    nav.classList.remove('mobile-active');
+    toggleBtn.classList.remove('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    if (lenis) lenis.start();
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = nav.classList.contains('mobile-active');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close mobile menu on clicking modal trigger inside nav
+  const modalTrigger = nav.querySelector('.btn-start-project');
+  if (modalTrigger) {
+    modalTrigger.addEventListener('click', closeMenu);
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('mobile-active')) {
+      closeMenu();
+    }
+  });
+}
 
 /**
  * Seamless Infinite SVG Text Flow inside Orange Ribbon (Left to Right)
@@ -437,21 +492,36 @@ function initWorkAccordion() {
     if (!item || !stageContainer || !imageTrack) return;
 
     const card = imageTrack.querySelector('.accordion-preview-card');
-    const cardWidth = card ? card.offsetWidth : 270;
-
+    const cardWidth = card ? card.offsetWidth : 240;
     const containerRect = stageContainer.getBoundingClientRect();
-    const itemRect = item.getBoundingClientRect();
 
-    // Center X position of active name relative to container
-    const itemCenterX = (itemRect.left + itemRect.width / 2) - containerRect.left;
-    let targetX = itemCenterX - (cardWidth / 2);
+    if (window.innerWidth <= 900) {
+      // On mobile/tablet viewports, ALWAYS center the preview card in the viewport
+      const targetX = Math.max(0, (containerRect.width - cardWidth) / 2);
+      imageTrack.style.transform = `translate3d(${targetX}px, 0, 0)`;
+    } else {
+      // On desktop screens, align card above the active name item
+      const itemRect = item.getBoundingClientRect();
+      const itemCenterX = (itemRect.left + itemRect.width / 2) - containerRect.left;
+      let targetX = itemCenterX - (cardWidth / 2);
 
-    // Clamp inside container bounds with safety right margin
-    const paddingRight = 20;
-    const maxX = Math.max(0, containerRect.width - cardWidth - paddingRight);
-    targetX = Math.max(0, Math.min(maxX, targetX));
+      const paddingRight = 20;
+      const maxX = Math.max(0, containerRect.width - cardWidth - paddingRight);
+      targetX = Math.max(0, Math.min(maxX, targetX));
+      imageTrack.style.transform = `translate3d(${targetX}px, 0, 0)`;
+    }
 
-    imageTrack.style.transform = `translate3d(${targetX}px, 0, 0)`;
+    // Auto-scroll roster pill row into view on mobile viewports
+    const rosterRow = document.getElementById('clientRosterRow');
+    if (window.innerWidth <= 900 && rosterRow && item) {
+      const itemLeft = item.offsetLeft;
+      const itemWidth = item.offsetWidth;
+      const rowWidth = rosterRow.offsetWidth;
+      rosterRow.scrollTo({
+        left: itemLeft - (rowWidth / 2) + (itemWidth / 2),
+        behavior: 'smooth'
+      });
+    }
   }
 
   function setActiveIndex(index) {
@@ -619,12 +689,12 @@ function initNewsletterBtn() {
   if (!btn) return;
 
   btn.addEventListener('click', () => {
-    btn.textContent = 'WELCOME TO THE KNOT ✓';
+    btn.textContent = 'WELCOME TO STORYLOOM ✓';
     btn.style.background = '#e8f552';
     btn.style.color = '#1e120c';
 
     setTimeout(() => {
-      btn.textContent = 'JOIN THE KNOT';
+      btn.textContent = 'JOIN STORYLOOM';
       btn.style.background = '#fff';
       btn.style.color = '#1e120c';
     }, 2500);
