@@ -601,10 +601,35 @@ function initWorkAccordion() {
   // Start continuous RAF loop
   requestAnimationFrame(updateAccordionOnScroll);
 
-  // Also support direct hover & click
+  // Direct hover & click handlers for book names
   clientItems.forEach((item, idx) => {
-    item.addEventListener('mouseenter', () => setActiveIndex(idx));
-    item.addEventListener('click', () => setActiveIndex(idx));
+    item.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 900) {
+        setActiveIndex(idx);
+      }
+    });
+
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      setActiveIndex(idx);
+
+      // Calculate scroll offset for clicked book and scroll smoothly
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const totalHeight = rect.height - windowHeight;
+
+      if (totalHeight > 0) {
+        const sectionTop = window.scrollY + rect.top;
+        const progress = clientList.length > 1 ? idx / (clientList.length - 1) : 0;
+        const targetY = sectionTop + (progress * totalHeight);
+
+        if (lenis) {
+          lenis.scrollTo(targetY, { duration: 1.0 });
+        } else {
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }
+      }
+    });
   });
 
   window.addEventListener('resize', () => {
